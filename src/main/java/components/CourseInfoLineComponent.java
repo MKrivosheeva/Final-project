@@ -17,8 +17,5 @@ public class CourseInfoLineComponent { //здесь будет получени�
        return trainigData;
    }
 
-   public void checkDataFromTileAndInfoLine () {
 
-
-   }
 }

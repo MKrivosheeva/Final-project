@@ -8,10 +8,13 @@ import preconditions.BeforeTestsCommonPreconditions;
 
 public class TrainingDescriptionTest extends BeforeTestsCommonPreconditions {
     @Test
-    public void testCourseInfoLine(){
+    public void testCourseInfoLine() {
         QATrainingsPage qaTrainingsPage = new QATrainingsPage(driver);
         qaTrainingsPage.openTrainingsPageFromMainMenu();
         String a[] = qaTrainingsPage.collectTrainingDataFromTile(TestingTrainigsNames.JavaQABasic.getName());
-        TrainingPage trainingPage = new TrainingPage (driver);
+        TrainingPage trainingPage = new TrainingPage(driver);
+        trainingPage.openTheTraining();
+        trainingPage.checkCourseInfo(a);
 
+    }
 }

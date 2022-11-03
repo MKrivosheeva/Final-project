@@ -25,7 +25,7 @@ public abstract class AbsPageObject {
     public AbsPageObject(WebDriver driver) {
         this.driver = driver;
         this.actions = new Actions(driver);
-     //   this.wait = new WebDriverWait(driver, Duration.ofMillis(5000));
+       this.wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver, this);
     }
 

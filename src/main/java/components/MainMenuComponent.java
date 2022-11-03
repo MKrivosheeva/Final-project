@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.events.EventPage;
 import pages.events.EventsSchedulePage;
 import pages.trainings.QATrainingsPage;
 import pages.trainings.TrainingPage;
