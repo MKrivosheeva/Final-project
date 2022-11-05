@@ -16,8 +16,11 @@ public abstract class AbsBaseComponent extends AbsPageObject {
         super(driver);
     }
 
+    protected AbsBaseComponent() {
+    }
 
-   public By LocatorType (String locator) {
+
+    public By LocatorType (String locator) {
     if(locator.startsWith("/")) {
         return By.xpath(locator);
     }

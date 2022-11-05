@@ -29,6 +29,9 @@ public abstract class AbsPageObject {
         PageFactory.initElements(driver, this);
     }
 
+    protected AbsPageObject() {
+    }
+
 //    @FindBy(tagName = "h1")
 //    String headerSelector = "[class='title-new__text'] h1";
 //    private WebElement header = driver.findElement(By.cssSelector(headerSelector));
