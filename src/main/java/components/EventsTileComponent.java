@@ -1,10 +1,11 @@
 package components;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 
 public class EventsTileComponent extends AbsBaseComponent {
 
@@ -13,9 +14,16 @@ public class EventsTileComponent extends AbsBaseComponent {
 
         super(driver);
     }
+    @Getter
+    @Setter
     private String eventType;
+    @Getter
+    @Setter
     private String eventDate;
+    @Getter
+    @Setter
     private String eventTime;
+
     private String tileBaseSelector = "[class='dod_new-event']";
     private LocalDateTime dateTime = LocalDateTime.now();
 
@@ -26,33 +34,6 @@ public EventsTileComponent(String eventType, String eventTime, String eventDate)
        this.eventType = eventType;
    }
 
-    public String getEventType() {
-        return eventType;
-    }
-
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-    }
-
-    public String getEventDate() {
-        return eventDate;
-    }
-
-    public void setEventDate(String eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    public String getEventTime() {
-        return eventTime;
-    }
-
-    public void setEventTime(String eventTime) {
-        this.eventTime = eventTime;
-    }
-
-    public EventsTileComponent() {
-
-    }
 
     public LocalDateTime getEventDateTime (EventsTileComponent eventTile) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy HH:mm");

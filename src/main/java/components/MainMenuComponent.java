@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.events.EventsSchedulePage;
 import pages.trainings.QATrainingsPage;
-import pages.trainings.TrainingPage;
+
 
 public class MainMenuComponent extends AbsBaseComponent {
 
@@ -45,23 +45,4 @@ public class MainMenuComponent extends AbsBaseComponent {
         logger.info("Инициирован переход в раздел " +  EventsData.EventsSchedule.getName() );
         return new EventsSchedulePage(driver);
     }
-
-
-   /* public CoursePage clickCurseByName(ICourseData courceData) { //тип объекта по названию страницы должен быть
-        String locator = String.format(subMenuLocator, MainMenuItemsData.Courses.getName(), courceData.getCourcesData().getName());
-        WebElement subMenu = driver.findElement(By.xpath(locator));
-
-        String copurceLocator = String.format(
-                "//*[contains(@class, 'header2-menu__subdropdown-item')][contains(text(), '%s')]",
-                courceData.getName()
-        );
-
-        actions
-                .moveToElement(subMenu, 40, 0)
-                .click(driver.findElements(By.xpath(copurceLocator)).get(1)).build().perform();
-
-        return new CoursePage(driver);
-    }
-    */
-
 }

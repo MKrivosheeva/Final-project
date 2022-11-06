@@ -1,11 +1,9 @@
 package qATrainingsTests;
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import pages.trainings.QATrainingsPage;
 import preconditions.BeforeTestsCommonPreconditions;
 
-import static data.trainigs.TrainigsData.*;
 
 public class TrainigsQuantityTest extends BeforeTestsCommonPreconditions {
 
