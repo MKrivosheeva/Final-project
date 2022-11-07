@@ -1,9 +1,9 @@
 package pages.trainings;
 
-import components.EventsTileComponent;
 import components.MainMenuComponent;
 import components.TrainigsTileComponent;
 import data.MainMenuItemsData;
+import data.trainigs.TestingTrainigsNames;
 import data.trainigs.TrainigsData;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -23,47 +23,57 @@ public class QATrainingsPage extends AbsBasePage {
 
     public QATrainingsPage(WebDriver driver) {
         super(driver);
-     }
+    }
 
 
     public void openTrainingsPageFromMainMenu() {
 
-       new MainMenuComponent(driver)
+        new MainMenuComponent(driver)
                 .moveCursorToItem(MainMenuItemsData.Trainigs)
                 .clickTrainingTypeByName(TrainigsData.Testing);
-       logger.info("Открыт раздел " + TrainigsData.Testing.getName());
+        logger.info("Открыт раздел " + TrainigsData.Testing.getName());
         pageHeaderShouldBeSameAs(driver.findElement(By.tagName("h1")),
                 Testing.getName());
     }
 
-  public Integer countTrainigsTilesOnPage() {
-        TrainigsTileComponent qaTrainigsTails = new TrainigsTileComponent(driver);
+    public Integer countTrainigsTilesOnPage() {
         List<WebElement> tiles = new ArrayList<>();
         tiles.addAll(driver.findElements(By.cssSelector(".lessons>a")));
         int tilesQuantity = tiles.size();
         Assertions.assertEquals(14, tilesQuantity, "Должно быть 14");
-        logger.info("Количество карточек в разделе " +tilesQuantity);
+        logger.info("Количество карточек в разделе " + tilesQuantity);
         return tilesQuantity;
     }
 
-public void openTrainigPage (String tileName) {
-      String tileLocatorByNamePatter = "//div[@class='lessons__new-item-title  lessons__new-item-title_with-bg js-ellipse'][contains(text(), '"+ tileName +"')]";
-      driver.findElement(By.xpath(tileLocatorByNamePatter)).click();
+    public void openTrainigPage(String tileName) {
+        String tileLocatorByName ="//div[@class='lessons__new-item-container']/div[contains(text(), '" + tileName + "')]";
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(tileLocatorByName)))).click();
     }
 
-  public HashMap<String, TrainigsTileComponent> collectTrainingsDataFromTiles() {
-      HashMap<String, TrainigsTileComponent> trainingsInfo = new HashMap<>(14);
-      TrainigsTileComponent temp = new TrainigsTileComponent(driver);
-      ((JavascriptExecutor)driver)
-              .executeScript("window.scrollBy(0,document.body.scrollHeight)");
-  // for (int i=0; i<countTrainigsTilesOnPage(); i++) { //получать количество
-      for (int i=0; i<12; i++) {
-         temp = temp.collectTrainingDataFromTile(i);
-         trainingsInfo.put(temp.getTrainingName(), temp);
-     }
-      return trainingsInfo;
-  }
-}
+    public HashMap<String, TrainigsTileComponent> collectTrainingsDataFromTiles() {
+        HashMap<String, TrainigsTileComponent> trainingsInfo = new HashMap<>(14);
+        TrainigsTileComponent temp = new TrainigsTileComponent(driver);
+        ((JavascriptExecutor) driver)
+                .executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        int quantity = countTrainigsTilesOnPage();
+        for (int i = 0; i < quantity; i++) {
+            temp = temp.collectTrainingDataFromTile(i);
+            trainingsInfo.put(temp.getTrainingName(), temp);
+        }
+        return trainingsInfo;
+    }
+
+    public void checkAllTrainingsInfo(HashMap<String, TrainigsTileComponent> trainingsInfo) {
+        TrainingPage page = new TrainingPage(driver);
+        for (TestingTrainigsNames element: TestingTrainigsNames.values()) {
+            String thisTrainingName = element.getName();
+            openTrainigPage(element.getName());
+            page.checkCourseInfo(trainingsInfo,thisTrainingName);
+            driver.navigate().back();
+            }
+        }
+
+    }
 
 
 

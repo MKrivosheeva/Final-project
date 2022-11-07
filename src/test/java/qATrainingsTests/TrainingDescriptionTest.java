@@ -12,10 +12,9 @@ public class TrainingDescriptionTest extends BeforeTestsCommonPreconditions {
     @Test
     public void testCourseInfoLine() {
         QATrainingsPage qaTrainingsPage = new QATrainingsPage(driver);
-        TrainingPage page = new TrainingPage(driver);
         qaTrainingsPage.openTrainingsPageFromMainMenu();
         HashMap<String, TrainigsTileComponent> allAboutTrainings = qaTrainingsPage.collectTrainingsDataFromTiles();
-        page.openTheTraining();
-        page.checkCourseInfo(allAboutTrainings);
+        qaTrainingsPage.checkAllTrainingsInfo(allAboutTrainings);
+
     }
 }

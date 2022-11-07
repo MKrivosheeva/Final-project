@@ -4,10 +4,10 @@ package data.trainigs;
 public enum TestingTrainigsNames {
 
     ChooseITProffesion("Выбор профессии в IT", TrainigsData.Testing),
-    QALead("QALead", TrainigsData.Testing),
+    QALead("QA Lead", TrainigsData.Testing),
     KotlinQAEngineer ("Kotlin QA Engineer", TrainigsData.Testing),
     LoadTesting ("Нагрузочное тестирование", TrainigsData.Testing),
-    QABasic ("QA Engineer.Basic", TrainigsData.Testing),
+    QABasic ("QA Engineer. Basic", TrainigsData.Testing),
     JAVAQAProf ("Java QA Engineer. Professional", TrainigsData.Testing),
     OpenStack ("Автоматизация тестирования OpenStack", TrainigsData.Testing),
     JSQA ("JavaScript QA Engineer", TrainigsData.Testing),
