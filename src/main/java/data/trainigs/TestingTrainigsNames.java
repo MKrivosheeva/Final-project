@@ -19,8 +19,8 @@ public enum TestingTrainigsNames {
     PythonBootCamp ("Буткемп Python QA Engineer", TrainigsData.Testing);
 
     private String name;
-    private TrainigsData trainigsData;//это из основного меню
-    TestingTrainigsNames(String name, TrainigsData trainigsDataData) { //название метода своё внутри тип осн.меню
+    private TrainigsData trainigsData;
+    TestingTrainigsNames(String name, TrainigsData trainigsDataData) {
         this.name = name;
         this.trainigsData = trainigsDataData;
     }
@@ -32,8 +32,4 @@ public enum TestingTrainigsNames {
 
         return trainigsData;
     }
-
-
-
-
 }

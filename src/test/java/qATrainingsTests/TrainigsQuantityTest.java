@@ -8,7 +8,7 @@ import preconditions.BeforeTestsCommonPreconditions;
 public class TrainigsQuantityTest extends BeforeTestsCommonPreconditions {
 
     @Test
-    public void testQATrainingsQauntity(){ // проверка количества карточек в разделе "Тестирование"
+    public void testQATrainingsQauntity(){
         QATrainingsPage qaTrainingsPage = new QATrainingsPage(driver);
         qaTrainingsPage.openTrainingsPageFromMainMenu();
         qaTrainingsPage.countTrainigsTilesOnPage();

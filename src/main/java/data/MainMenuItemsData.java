@@ -1,6 +1,6 @@
 package data;
 
-public enum MainMenuItemsData { //основное меню
+public enum MainMenuItemsData {
 
     Trainigs("Курсы"),
     Events("События"),

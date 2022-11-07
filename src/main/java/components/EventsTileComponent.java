@@ -27,13 +27,11 @@ public class EventsTileComponent extends AbsBaseComponent {
     private String tileBaseSelector = "[class='dod_new-event']";
     private LocalDateTime dateTime = LocalDateTime.now();
 
-
 public EventsTileComponent(String eventType, String eventTime, String eventDate) {
        this.eventDate = eventDate;
        this.eventTime = eventTime;
        this.eventType = eventType;
    }
-
 
     public LocalDateTime getEventDateTime (EventsTileComponent eventTile) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy HH:mm");

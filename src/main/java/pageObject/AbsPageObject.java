@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
 public abstract class AbsPageObject {
     protected WebDriver driver;
     protected Actions actions;
@@ -17,22 +15,12 @@ public abstract class AbsPageObject {
     public AbsPageObject(WebDriver driver) {
         this.driver = driver;
         this.actions = new Actions(driver);
-       this.wait = new WebDriverWait(driver, 5);
+        this.wait = new WebDriverWait(driver, 5);
         PageFactory.initElements(driver, this);
     }
 
     protected AbsPageObject() {
     }
-
-//    @FindBy(tagName = "h1")
-//    String headerSelector = "[class='title-new__text'] h1";
-//    private WebElement header = driver.findElement(By.cssSelector(headerSelector));
-//    public void pageHeaderShouldBeSameAs(String expectedHeader) {
-//        Assertions.assertEquals(
-//                header,
-//                this.header.getText(),
-//                String.format("Header should be %s", expectedHeader));//нужны вейтеры
-//    }
 
     public WebDriver getDriver() {
         return driver;

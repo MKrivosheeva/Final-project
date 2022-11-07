@@ -1,6 +1,5 @@
 package components;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.By;
@@ -23,7 +22,7 @@ public class TrainigsTileComponent extends AbsBaseComponent{
 
     private String trainingTileBaseSelector = "a[class$='lessons__new-item_hovered']";
 
-    public TrainigsTileComponent collectTrainingDataFromTile (int i) {//тут возможно добавить трай/кэтч для двух оставшихся карточек
+    public TrainigsTileComponent collectTrainingDataFromTile (int i) {
      TrainigsTileComponent training = new TrainigsTileComponent(driver);
      String thisTileSelector = trainingTileBaseSelector +  ":nth-child("+(i+1) +")";
      String tileNameSelector = thisTileSelector + " [class^='lessons__new-item-title']";

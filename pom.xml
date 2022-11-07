@@ -2,11 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>practikOtus</artifactId>
+    <artifactId>FinalProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,8 +14,7 @@
         <webdriver.manager.version>4.2.0</webdriver.manager.version>
         <selenium.java.version>3.141.59</selenium.java.version>
         <junit.version>5.9.0</junit.version>
-        <faker.version>1.0.2</faker.version>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <browser>chrome</browser>
         <base.url>https://otus.ru</base.url>
         <testStudent.login>aun34271@cdfaq.com</testStudent.login>
@@ -51,12 +49,7 @@
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>${faker.version}</version>
-        </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+      <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -92,5 +85,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

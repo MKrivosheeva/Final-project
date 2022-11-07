@@ -10,8 +10,8 @@ public enum EventsData implements IMenuData {
     Intensives ("Интенсивы", MainMenuItemsData.Events);
 
     private String name;
-    private MainMenuItemsData mainMenuItemsData;//это из основного меню
-    EventsData(String name, MainMenuItemsData mainMenuItemsData) { //название метода своё внутри тип осн.меню
+    private MainMenuItemsData mainMenuItemsData;
+    EventsData(String name, MainMenuItemsData mainMenuItemsData) {
         this.name = name;
         this.mainMenuItemsData = mainMenuItemsData;
     }

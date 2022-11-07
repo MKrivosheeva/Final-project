@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.AbsBasePage;
 import java.time.LocalDateTime;
@@ -39,7 +38,7 @@ public class EventsSchedulePage extends AbsBasePage {
     public List<EventsTileComponent> createListOfTiles(String tileSelector){
         List <EventsTileComponent> listOfFutureEvents = new ArrayList<>();
 
-        int a=0; //вот это надо переделать в какой-то другой способ или условие завершения прокрутки
+        int a=0;
         while (a<5) {
           ((JavascriptExecutor) driver)
                   .executeScript("$('html,body').animate({scrollTop: document.body.scrollHeight},\"fast\");");
@@ -57,16 +56,8 @@ public class EventsSchedulePage extends AbsBasePage {
         return listOfFutureEvents;
     }
 
-//    public void checkIfAnyEventsOnPage() {
-//      List allFutureEvents = createListOfTiles(tileSelector);
-//      int quantity =  allFutureEvents.size();
-//      Assertions.assertTrue(quantity>0, "Мероприятия отображаются на странице");
-//      logger.info("Всего мероприятий " + quantity);
-//     }
-
     public void checkIfEventDateInFuture() {
         List<EventsTileComponent> events = createListOfTiles(tileSelector);
-      //  logger.info("Всего запланировано мероприятий: " + events.size());
         LocalDateTime thisEventDate;
         for (EventsTileComponent element : events) {
         thisEventDate = element.getEventDateTime(element);

@@ -5,7 +5,6 @@ import components.TrainigsTileComponent;
 import data.trainigs.TestingTrainigsNames;
 import data.trainigs.TrainingFormat;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
 
@@ -19,33 +18,18 @@ public class TrainingPage extends AbsBasePage {
     }
  private QATrainingsPage trainingsPage = new QATrainingsPage(driver);
 
-// public void openTheTraining (String trainingName) {
-//     trainingsPage.openTrainigPage(trainingName);
-//     pageHeaderShouldBeSameAs(driver.findElement(By.cssSelector(".course-header2__title")), TestingTrainigsNames.JavaQABasic.getName());
-// }
-
-
-// public void checkCourseInfo (HashMap<String, TrainigsTileComponent> trainingsData){
-//     CourseInfoLineComponent infoLineComponent = new CourseInfoLineComponent(driver);
-//     infoLineComponent.collectCourseInfo(infoLineComponent);
-//     TrainigsTileComponent requestedTile = trainingsData.get("Java QA Engineer. Basic");
-//     Assertions.assertEquals(requestedTile.getTrainingDuration(), infoLineComponent.getInfoLineDuration(), "длительность не совпадает");
-//     Assertions.assertEquals(requestedTile.getTrainingStartDate(), infoLineComponent.getInfoLineStartDate(), "даты не совпадают");
-//     Assertions.assertEquals(requestedTile.getTrainingName(), infoLineComponent.getInfoLineName(), "заголовки не совпадают");
-//     Assertions.assertEquals("Online", infoLineComponent.getInfoLineFormat(), "формат не совпадает");
-// }
 
     public void checkCourseInfo (HashMap<String, TrainigsTileComponent> trainingsData, String trainingName){
         CourseInfoLineComponent infoLineComponent = new CourseInfoLineComponent(driver);
-       if ((trainingName.equals("QA Engineer. Basiс") |
-                trainingName.equals("QA Lead") |
-                trainingName.equals("QA Engineer. Basic") |
-                trainingName.equals("Специализация QA Automation Engineer") |
-                trainingName.equals("Ручное тестирование") |
-                trainingName.equals("Выбор профессии в IT") |
-                trainingName.equals("Буткемп Python QA Engineer"))) {
+        if ((trainingName.equals(TestingTrainigsNames.QABasic.getName()) |
+                   trainingName.equals(TestingTrainigsNames.QALead.getName()) |
+                   trainingName.equals(TestingTrainigsNames.JavaQAPro.getName()) |
+                   trainingName.equals(TestingTrainigsNames.ManualTesting.getName()) |
+                   trainingName.equals(TestingTrainigsNames.ChooseITProffesion.getName()) |
+                   trainingName.equals(TestingTrainigsNames.PythonBootCamp.getName()))) {
+
          Assertions.assertNotNull(trainingsData.get(trainingName), "данные отсутствуют");
-         logger.info("Страница курса не содержит необходимое полное описание");
+         logger.info("Страница курса" + trainingName + " не содержит необходимое полное описание");
 
         }
         else {
@@ -61,7 +45,4 @@ public class TrainingPage extends AbsBasePage {
             logger.info("Формат курса " + trainingName + " корректный");
         }
     }
-
-
-
 }

@@ -23,7 +23,7 @@ default void downloadLocalWebDriver(DriverManagerType driverType) throws DriverN
 default:
         throw new DriverNotSupportedException(driverType.name());
         }
-        }
+ }
 
         WebDriverManager.getInstance(driverType).setup();
         }

@@ -20,8 +20,8 @@ public enum TrainigsData implements IMenuData {
 
 
     private String name;
-    private MainMenuItemsData mainMenuItemsData;//это из основного меню
-    TrainigsData(String name, MainMenuItemsData mainMenuItemsData) { //название метода своё внутри тип осн.меню
+    private MainMenuItemsData mainMenuItemsData;
+    TrainigsData(String name, MainMenuItemsData mainMenuItemsData) {
         this.name = name;
         this.mainMenuItemsData = mainMenuItemsData;
     }
