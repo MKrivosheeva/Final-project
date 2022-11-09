@@ -3,7 +3,7 @@ package data.trainigs;
 
 public enum TestingTrainigsNames {
 
-    ChooseITProffesion("Выбор профессии в IT", TrainigsData.Testing),
+    ChooseITProffession("Выбор профессии в IT", TrainigsData.Testing),
     QALead("QA Lead", TrainigsData.Testing),
     KotlinQAEngineer ("Kotlin QA Engineer", TrainigsData.Testing),
     LoadTesting ("Нагрузочное тестирование", TrainigsData.Testing),

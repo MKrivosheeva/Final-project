@@ -25,11 +25,11 @@ public class TrainingPage extends AbsBasePage {
                    trainingName.equals(TestingTrainigsNames.QALead.getName()) |
                    trainingName.equals(TestingTrainigsNames.JavaQAPro.getName()) |
                    trainingName.equals(TestingTrainigsNames.ManualTesting.getName()) |
-                   trainingName.equals(TestingTrainigsNames.ChooseITProffesion.getName()) |
+                   trainingName.equals(TestingTrainigsNames.ChooseITProffession.getName()) |
                    trainingName.equals(TestingTrainigsNames.PythonBootCamp.getName()))) {
 
          Assertions.assertNotNull(trainingsData.get(trainingName), "данные отсутствуют");
-         logger.info("Страница курса" + trainingName + " не содержит необходимое полное описание");
+         logger.info("Страница курса " + trainingName + " не содержит необходимое полное описание");
 
         }
         else {

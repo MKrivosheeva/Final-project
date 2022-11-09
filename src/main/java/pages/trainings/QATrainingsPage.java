@@ -35,7 +35,7 @@ public class QATrainingsPage extends AbsBasePage {
                 Testing.getName());
     }
 
-    public Integer countTrainigsTilesOnPage() {
+    public Integer countTrainingsTilesOnPage() {
         List<WebElement> tiles = new ArrayList<>();
         tiles.addAll(driver.findElements(By.cssSelector(".lessons>a")));
         int tilesQuantity = tiles.size();
@@ -54,7 +54,7 @@ public class QATrainingsPage extends AbsBasePage {
         TrainigsTileComponent temp = new TrainigsTileComponent(driver);
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollBy(0,document.body.scrollHeight)");
-        int quantity = countTrainigsTilesOnPage();
+        int quantity = countTrainingsTilesOnPage();
         for (int i = 0; i < quantity; i++) {
             temp = temp.collectTrainingDataFromTile(i);
             trainingsInfo.put(temp.getTrainingName(), temp);

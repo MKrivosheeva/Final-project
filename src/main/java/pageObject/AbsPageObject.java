@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class AbsPageObject {
+public abstract class AbsPageObject {//переименовать
     protected WebDriver driver;
     protected Actions actions;
     protected WebDriverWait wait;

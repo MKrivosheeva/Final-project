@@ -11,6 +11,6 @@ public class TrainigsQuantityTest extends BeforeTestsCommonPreconditions {
     public void testQATrainingsQauntity(){
         QATrainingsPage qaTrainingsPage = new QATrainingsPage(driver);
         qaTrainingsPage.openTrainingsPageFromMainMenu();
-        qaTrainingsPage.countTrainigsTilesOnPage();
+        qaTrainingsPage.countTrainingsTilesOnPage();
     }
 }
